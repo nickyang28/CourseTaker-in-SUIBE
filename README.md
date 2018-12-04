@@ -11,7 +11,7 @@ In order to run this tool smoothly, some support libraries are also required. Th
 6. Requests
 7. Pillow
 ## 1. Sign up
-Before you can really use this app, you have to create an account with need to be bound to your ___student number___. So, technically, every student is allowed to only create one account. Since it is only the first public beta version, signing up is ___totally free of charge___ (for now lol). By simply clciking the 'Sign Up' button, the following window will pop up.
+Before you can really use this app, you have to create an account which need to be bound to your ___student number___. So, technically, every student is allowed to only create one account. Since it is only the first public beta version, signing up is ___totally free of charge___ (for now lol). By simply clciking the 'Sign Up' button, the following window will pop up.
 1. Type in your username.
 2. Type in your password.
 3. Type in your student number. (Be careful, do not type it wrong since it cannot be changed unless you contact me.)

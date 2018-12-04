@@ -10,7 +10,7 @@ In order to run this tool smoothly, some support libraries are also required. Th
 5. PhantomJS
 6. Requests
 7. Pillow
-## 1. Register
+## 1. Sign up
 Before you can really use this app, you have to create an account with need to be bound to your ___student number___. So, technically, every student is allowed to only create one account. Since it is only the first public beta version, signing up is ___totally free of charge___ (for now lol). By simply clciking the 'Sign Up' button, the following window will pop up.
 1. Type in your username.
 2. Type in your password.
@@ -22,7 +22,7 @@ Click the 'Sign In' button and another tiny lovely window will pop up. Type in y
 You can see that the blank for your student number is already filled in since your student number is bound to your account. 
 The only thing you need to do is to fill in the blanks for password and the verification code.  
 ***NOTICE: This is your in-school password! Not the one that you use to sign in this app!***   
-___DO NOT PRESS THE 'STRT' BUTTON IS THIS STEP___
+___DO NOT PRESS THE 'STRT' BUTTON IN THIS STEP___
 ## 4. Type in the course numbers
 The course number (e.g 107.125.201) is a unique identity for every course which you can find on the Course Selecting System website. Enter your course numbers one by one and the final step is ready to go.
 ## 5. Launching the rocket!

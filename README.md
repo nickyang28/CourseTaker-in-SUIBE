@@ -10,7 +10,7 @@ In order to run this tool smoothly, some support libraries are also required. Th
 5. PhantomJS
 6. Requests
 7. Pillow
-## 0.5 Or Just Download from Here
+## 0.5. Or Just Download from Here
 
 https://nickyang.info/projects/CourseTaker/CourseTaker.exe
 

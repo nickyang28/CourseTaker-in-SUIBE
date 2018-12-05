@@ -1,6 +1,6 @@
 # Course Taker in SUIBE
 ## 0. Before You Start
-This application is based on ___Python 2.x___, so it is supposed to be workable on any plantform with ___Python 2.x___ installed. The Course Taker is designed ___only___ for studnets from ___Shanghai University of International Business and Economics___(SUIBE) to save their time when it comes to course selecting.(Here is the link: http://xk.suibe.edu.cn/)  
+This tool is powered by ___Python 2.x___, so it is supposed to be workable on any plantform with ___Python 2.x___ installed. The Course Taker is designed ___only___ for studnets from ___Shanghai University of International Business and Economics___(SUIBE) to save their time when it comes to course selecting.(Here is the link: http://xk.suibe.edu.cn/)  
 
 In order to run this tool smoothly, some support libraries are also required. They are listed below:  
 1. DaPy
@@ -10,6 +10,10 @@ In order to run this tool smoothly, some support libraries are also required. Th
 5. PhantomJS
 6. Requests
 7. Pillow
+## 0.5 Or Just Download from Here
+
+https://nickyang.info/projects/CourseTaker/CourseTaker.exe
+
 ## 1. Sign up
 Before you can really use this app, you have to create an account which need to be bound to your ___student number___. So, technically, every student is allowed to only create one account. Since it is only the first public beta version, signing up is ___totally free of charge___ (for now lol). By simply clciking the 'Sign Up' button, the following window will pop up.
 1. Type in your username.

@@ -1,6 +1,6 @@
-# Courselector in SUIBE
+# Course Taker in SUIBE
 ## 0. Before You Start
-This application is based on ___Python 2.x___, so it is supposed to be workable on any plantform with ___Python 2.x___ installed. The Course Selector is designed ___only___ for studnets from ___Shanghai University of International Business and Economics___(SUIBE) to save their time when it comes to course selecting.(Here is the link: http://xk.suibe.edu.cn/)  
+This application is based on ___Python 2.x___, so it is supposed to be workable on any plantform with ___Python 2.x___ installed. The Course Taker is designed ___only___ for studnets from ___Shanghai University of International Business and Economics___(SUIBE) to save their time when it comes to course selecting.(Here is the link: http://xk.suibe.edu.cn/)  
 
 In order to run this tool smoothly, some support libraries are also required. They are listed below:  
 1. DaPy

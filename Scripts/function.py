@@ -104,7 +104,7 @@ class xk_assistant(threading.Thread):
             for code in not_found_codes:
                 gb_v.TUNNEL_F2D.append(gb_v.code_info(code, u'请检查选课序号！'))
             gb_v.TUNNEL_F2D.append(None)
-            gb_v.DRIVER.close()
+            # gb_v.DRIVER.close()
             gb_v.DRIVER = None
         except Exception, e:
             print e
@@ -191,7 +191,7 @@ class xk_assistant(threading.Thread):
 
     def interdisciplinary_xk(self, xgxkx_codes=[]):
         for code in xgxkx_codes:
-            info = {'method': 'handleQxgxk',
+            info = {'method': 'handleXgxkxxk',
                     'jxbid': code,
                     'glJxbid': '',
                     'xyjc': ''}

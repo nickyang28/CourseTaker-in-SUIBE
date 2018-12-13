@@ -134,8 +134,8 @@ class xk_assistant(threading.Thread):
             '''
             self.driver.find_element_by_xpath('//*[@id="mainFun"]/li[3]/a').click()
             JSESSIONID = selenium_cookies[0]['value']
-            cookie = ''.join(['JSESSIONID=', JSESSIONID]).encode('ascii')
-            gb_v.HEADERS['Cookie'] = cookie
+            cookie = ''.join(['JSESSIONID=', JSESSIONID])
+            gb_v.HEADERS['Cookie'] = str(cookie)
             return True
         return False
 
@@ -151,6 +151,7 @@ class xk_assistant(threading.Thread):
                 headers=gb_v.HEADERS)
             '''
             r = requests.get('http://xk.suibe.edu.cn/xsxk/xkOper.xk', headers=gb_v.HEADERS, params=info)
+            # print bs(r.text.encode('raw_unicode_escape'), 'lxml').prettify()
             if 'false' not in r.text:
                 gb_v.TUNNEL_F2D.append(gb_v.code_info(shortencode(code),
                                                       u'选课成功！'))

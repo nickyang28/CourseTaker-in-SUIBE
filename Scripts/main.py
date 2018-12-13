@@ -31,5 +31,8 @@ def main():
 if __name__ == '__main__':
     main()
     if gb_v.DRIVER is not None:
-        gb_v.DRIVER.close()
-        gb_v.DRIVER.quit()
+        try:
+            gb_v.DRIVER.close()
+            gb_v.DRIVER.quit()
+        except:
+            pass

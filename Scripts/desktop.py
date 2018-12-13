@@ -171,7 +171,7 @@ class desktop(wx.Frame):
 
 class App(wx.App):
     def OnInit(self):
-        gb_v.USERNUMBER = ''
+        gb_v.USERNUMBER = '1601034'
         if not get_safe_code():
             wx.MessageBox(u'无法获取到验证码, 请检查网络。')
         self.frame = desktop(parent=None)

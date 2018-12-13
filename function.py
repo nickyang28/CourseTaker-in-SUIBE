@@ -71,6 +71,12 @@ def get_safe_code_again():
     return True
 
 
+def shortencode(code):
+    list = code.split('.')
+    code = str(list[0][-3:]) + '.' + str(list[1]) + '.' + str(list[2])
+    return code
+
+
 class xk_assistant(threading.Thread):
     def __init__(self, codes):
         threading.Thread.__init__(self)
@@ -85,14 +91,15 @@ class xk_assistant(threading.Thread):
                 gb_v.TUNNEL_F2D.append(False)
                 return
             tj_codes, tyk_codes, qxg_codes, xgxkx_codes = self.code_classification(self.codes)
-            # print tj_codes, tyk_codes, qxg_codes, xgxkx_codes
+            print tj_codes, tyk_codes, qxg_codes, xgxkx_codes
             self.recommend_xk(tj_codes)
             self.physical_xk(tyk_codes)
             self.public_xk(qxg_codes)
             self.interdisciplinary_xk(xgxkx_codes)
-            useful_total = [code[-11:] for code in tj_codes] + [code[-11:] for code in tyk_codes] + [code[-11:] for code in
-                                                                                               qxg_codes] + [code[-11:] for code in
-                                                                                               xgxkx_codes]
+            useful_total = [shortencode(code) for code in tj_codes] + [shortencode(code) for code in tyk_codes] + [
+                shortencode(code) for code in
+                qxg_codes] + [shortencode(code) for code in
+                              xgxkx_codes]
             not_found_codes = list(set(self.codes) - set(useful_total))
             for code in not_found_codes:
                 gb_v.TUNNEL_F2D.append(gb_v.code_info(code, u'请检查选课序号！'))
@@ -145,10 +152,10 @@ class xk_assistant(threading.Thread):
             '''
             r = requests.get('http://xk.suibe.edu.cn/xsxk/xkOper.xk', headers=gb_v.HEADERS, params=info)
             if 'false' not in r.text:
-                gb_v.TUNNEL_F2D.append(gb_v.code_info(code[-11:],
+                gb_v.TUNNEL_F2D.append(gb_v.code_info(shortencode(code),
                                                       u'选课成功！'))
             else:
-                gb_v.TUNNEL_F2D.append(gb_v.code_info(code[-11:],
+                gb_v.TUNNEL_F2D.append(gb_v.code_info(shortencode(code),
                                                       r.text.split('"')[5]))
 
     def physical_xk(self, tyk_codes=[]):
@@ -156,14 +163,15 @@ class xk_assistant(threading.Thread):
             info = {'method': 'handleTykxk',
                     'jxbid': code,
                     'glJxbid': '',
+                    'xkzy': '1',
                     'xyjc': ''}
 
             r = requests.get('http://xk.suibe.edu.cn/xsxk/xkOper.xk', headers=gb_v.HEADERS, params=info)
             if 'false' not in r.text:
-                gb_v.TUNNEL_F2D.append(gb_v.code_info(code[-11],
+                gb_v.TUNNEL_F2D.append(gb_v.code_info(shortencode(code),
                                                       u'选课成功！'))
             else:
-                gb_v.TUNNEL_F2D.append(gb_v.code_info(code[-11],
+                gb_v.TUNNEL_F2D.append(gb_v.code_info(shortencode(code),
                                                       r.text.split('"')[5]))
 
     def public_xk(self, qxg_codes=[]):
@@ -174,10 +182,10 @@ class xk_assistant(threading.Thread):
                     'xyjc': ''}
             r = requests.get('http://xk.suibe.edu.cn/xsxk/xkOper.xk', headers=gb_v.HEADERS, params=info)
             if 'false' not in r.text:
-                gb_v.TUNNEL_F2D.append(gb_v.code_info(code[-11:],
+                gb_v.TUNNEL_F2D.append(gb_v.code_info(shortencode(code),
                                                       u'选课成功！'))
             else:
-                gb_v.TUNNEL_F2D.append(gb_v.code_info(code[-11:],
+                gb_v.TUNNEL_F2D.append(gb_v.code_info(shortencode(code),
                                                       r.text.split('"')[5]))
 
     def interdisciplinary_xk(self, xgxkx_codes=[]):
@@ -189,10 +197,10 @@ class xk_assistant(threading.Thread):
 
             r = requests.get('http://xk.suibe.edu.cn/xsxk/xkOper.xk', headers=gb_v.HEADERS, params=info)
             if 'false' not in r.text:
-                gb_v.TUNNEL_F2D.append(gb_v.code_info(code[-11:],
+                gb_v.TUNNEL_F2D.append(gb_v.code_info(shortencode(code),
                                                       u'选课成功！'))
             else:
-                gb_v.TUNNEL_F2D.append(gb_v.code_info(code[-11:],
+                gb_v.TUNNEL_F2D.append(gb_v.code_info(shortencode(code),
                                                       r.text.split('"')[5]))
 
     def get_course_no(self, course_no, html_text):
@@ -206,7 +214,7 @@ class xk_assistant(threading.Thread):
 
         for course in course_no:
             for no in all_no:
-                if course in no[-11:]:
+                if course in shortencode(no):
                     useful_no.append(all_no[all_no.index(no)])
                     break
         return set(useful_no)

@@ -98,6 +98,7 @@ class desktop(wx.Frame):
         if not gb_v.TUNNEL_F2D:
             return
         result = gb_v.TUNNEL_F2D.pop(0)
+        print result
         if result is False:
             wx.MessageBox(u'登陆失败：密码或验证码错误， 请刷新验证码后重试。', u'选课助手', style=wx.ICON_ERROR)
             self.password.Enable()
@@ -170,7 +171,7 @@ class desktop(wx.Frame):
 
 class App(wx.App):
     def OnInit(self):
-        gb_v.USERNUMBER = '17068028'
+        gb_v.USERNUMBER = ''
         if not get_safe_code():
             wx.MessageBox(u'无法获取到验证码, 请检查网络。')
         self.frame = desktop(parent=None)

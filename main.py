@@ -1,11 +1,13 @@
 # -*- coding:utf-8 -*-
 import warnings
+
 warnings.filterwarnings('ignore')
 import wx
 import global_variable as gb_v
 import guiManager as FrameManager
 
 locale = wx.Locale.GetSystemLanguage()
+
 
 class MainAPP(wx.App):
     def OnInit(self):
@@ -20,9 +22,11 @@ class MainAPP(wx.App):
         self.frame = self.manager.GetFrame(type)
         self.frame.Show()
 
+
 def main():
     app = MainAPP()
     app.MainLoop()
+
 
 if __name__ == '__main__':
     main()
